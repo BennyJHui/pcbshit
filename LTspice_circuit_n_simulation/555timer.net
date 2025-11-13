@@ -11,14 +11,16 @@ R6 V_trig Vout 14713.896
 C4 V_trig 0 10µF
 V2 Vp 0 5
 V3 0 Vn 5
-L1 N004 Vout 54.839H
-C3 V_sine 0 10µF
+L1 N004 Vout 60
+C3 V_sine 0 5µF
 R1 V_sine N004 3500
+R2 N004 Vout 25800
 * .tran 5
 .meas tran vmax max V(OUT)
 * Assume as potentiometer \nwhere you can change\nC = 10uF\nR = 1/(f * C) to get good triangle wave
 .lib LM324.ti.lib
-.tran 30
+* .tran 30
+.tran 3
 .lib NE555.sub
 .backanno
 .end
